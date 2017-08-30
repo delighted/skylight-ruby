@@ -2,7 +2,6 @@ module Skylight
   module Probes
     module Faraday
       class Probe
-
         def install
           ::Faraday::Connection.class_eval do
             alias initialize_without_sk initialize
