@@ -23,8 +23,8 @@ module Skylight
             private
 
             def infer_sky_virtual_path
-              if expanded_path = file && File.expand_path(file)
-                Pathname.new(expanded_path)
+              if file
+                Pathname.new(File.expand_path(file))
                   .relative_path_from(Rails.root)
                   .to_s
                   .gsub(Skylight::Probes::Tilt::Probe::VIRTUAL_PATH_PREFIX_PTN, "")
