@@ -3,7 +3,7 @@ module Skylight
   module Probes
     module Tilt
       class Probe
-        VIRTUAL_PATH_PREFIX_PTN = /^(app|lib|vendor)\/(views|assets)\//
+        VIRTUAL_PATH_PREFIX_PTN = %r{^(app/assets/)(fonts|images|javascripts|stylesheets|videos)/}
 
         def install
           ::Tilt::Template.class_eval do
